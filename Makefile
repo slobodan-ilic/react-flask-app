@@ -19,7 +19,7 @@ run-server:
 
 run:
 	@echo "Starting React Prorator app..."
-	yarn start
+	npm start
 
 test:
 	@echo "Running backend tests..."
