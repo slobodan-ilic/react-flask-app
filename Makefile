@@ -11,7 +11,7 @@ install:
 	python3 -m venv flask-server/venv;
 	flask-server/venv/bin/pip install -r flask-server/requirements.txt;
 	@echo "Installing required react dependencies..."
-	npm install
+	yarn install
 
 run-server:
 	@echo "Starting Flask server with Prorator API..."
@@ -19,7 +19,7 @@ run-server:
 
 run:
 	@echo "Starting React Prorator app..."
-	npm start
+	yarn start
 
 test:
 	@echo "Running backend tests..."
