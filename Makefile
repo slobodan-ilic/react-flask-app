@@ -12,3 +12,11 @@ install:
 	flask-server/venv/bin/pip install -r flask-server/requirements.txt;
 	@echo "Installing required react dependencies..."
 	npm install
+
+run-server:
+	@echo "Starting Flask server with Prorator API..."
+	cd flask-server && venv/bin/flask run --no-debugger
+
+run:
+	@echo "Starting React Prorator app..."
+	yarn start
