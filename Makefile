@@ -7,6 +7,8 @@ help:
 	@echo "  run             run react app (server needs to be sterted first)"
 
 install:
-	cd flask-server;
-	python -m venv venv;
-	venv/bin/pip install -r requirements.txt
+	@echo "Installing python virtual environment with Flask dependencies..."
+	python -m venv flask-server/venv;
+	flask-server/venv/bin/pip install -r flask-server/requirements.txt;
+	@echo "Installing required react dependencies..."
+	npm install
