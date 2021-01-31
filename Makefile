@@ -20,3 +20,7 @@ run-server:
 run:
 	@echo "Starting React Prorator app..."
 	yarn start
+
+test:
+	@echo "Running backend tests..."
+	cd flask-server && venv/bin/pytest
