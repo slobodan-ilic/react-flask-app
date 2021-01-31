@@ -8,7 +8,7 @@ help:
 
 install:
 	@echo "Installing python virtual environment with Flask dependencies..."
-	python -m venv flask-server/venv;
+	python3 -m venv flask-server/venv;
 	flask-server/venv/bin/pip install -r flask-server/requirements.txt;
 	@echo "Installing required react dependencies..."
 	npm install
