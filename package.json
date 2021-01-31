@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-server": "cd flask-server && venv/bin/flask run --no-debugger",
+    "start-server": "cd flask-server && python3 -m venv venv && venv/bin/pip install -r requirements.txt && venv/bin/flask run --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
