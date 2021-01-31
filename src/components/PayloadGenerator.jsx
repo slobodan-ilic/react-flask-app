@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Form, Col, Button } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const PayloadGenerator = ({ onAllocationAmount, onAddInvestor }) => {
   const [invName, setInvName] = useState('')
@@ -11,6 +10,7 @@ const PayloadGenerator = ({ onAllocationAmount, onAddInvestor }) => {
     const requested_amount = parseFloat(requestedAmount)
     const average_amount = parseFloat(averageAmount)
 
+    // Sanitize inputs
     if (invName === '') {
       alert('Must specify name.')
       return
@@ -24,13 +24,12 @@ const PayloadGenerator = ({ onAllocationAmount, onAddInvestor }) => {
       return
     }
 
+    // Update state with newly added investor
     const newInvestor = {
       name: invName,
       requested_amount: requested_amount,
       average_amount: average_amount,
     }
-
-    // Update state with newly added investor
     onAddInvestor(newInvestor)
 
     // Clean state for adding (potential) next investor

@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
+import { Card, Col, Container, Button, Jumbotron, Row } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import { getProratedAmounts } from './services/Prorate'
 import { Inputs } from './components/Inputs'
 import { Outputs } from './components/Outputs'
 import { PayloadGenerator } from './components/PayloadGenerator'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Jumbotron, Row, Col, Button, Card } from 'react-bootstrap'
-import { getProratedAmounts } from './services/Prorate'
 
 const App = () => {
   const [allocationAmount, setAllocationAmount] = useState('')
   const [proratedAmounts, setProratedAmounts] = useState({})
   const [investors, setInvestors] = useState([])
+
   const preparePayload = () => {
     const alloc = parseFloat(allocationAmount)
 
@@ -23,24 +25,28 @@ const App = () => {
       investor_amounts: investors,
     }
   }
+
   const handleClick = async () => {
     const payload = preparePayload()
     const response = await getProratedAmounts(payload)
     setProratedAmounts(response)
   }
+
   const addInvestor = (investor) => {
     setInvestors([...investors, investor])
   }
+
   const resetData = () => {
     setAllocationAmount('')
     setProratedAmounts({})
     setInvestors([])
   }
+
   return (
-    <Container className="p-3">
+    <Container className="p-4">
       <Row>
         <Col>
-          <h1 className="header">Welcome to Prorator demo app</h1>
+          <h1 className="header">Welcome to the Prorator demo app</h1>
         </Col>
       </Row>
       <Row>

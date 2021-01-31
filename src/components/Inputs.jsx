@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import { getProratedAmounts } from '../services/Prorate'
+import React from 'react'
 import { Table } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Inputs = ({ investors }) => {
   return (
