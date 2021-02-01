@@ -66,7 +66,7 @@ After starting the server, we need to start the app. You might need to open an
 additional terminal window, since the above command (starting server) is blocking.
 From the project directory, run:
 
-### `make start`
+### `make run`
 
 This runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

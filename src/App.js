@@ -71,7 +71,12 @@ const App = () => {
         <Card.Body>
           <Row>
             <Col>
-              <Button onClick={handleClick}>Generate Prorated Amounts</Button>
+              <Button
+                onClick={handleClick}
+                disabled={allocationAmount === '' || investors.length === 0}
+              >
+                Generate Prorated Amounts
+              </Button>
             </Col>
             <Col>
               <Button variant="outline-primary" onClick={resetData}>
